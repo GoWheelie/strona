@@ -1,0 +1,8 @@
+# Blokuj dostęp do folderu assets
+RewriteEngine On
+RewriteRule ^assets/.*$ - [F,L]
+
+# Ukryj rozszerzenia plików
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
